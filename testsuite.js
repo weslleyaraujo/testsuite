@@ -8,6 +8,7 @@
 
   Test.prototype.module = function () {
     var stage = Test.Prepare.apply(null, arguments)
+    this.before && this.before();
     console.log(stage.description);
     stage.fn.call(this, new Test);
   };
@@ -22,7 +23,10 @@
     }
   };
 
-  Test.prototype.beforeEach = function () {
+  Test.prototype.beforeEach = function (fn) {
+    this.before = function () {
+      fn.call(this, arguments);
+    };
   };
 
   Test.prototype.equals = function () {

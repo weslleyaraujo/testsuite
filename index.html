@@ -10,6 +10,7 @@
     <div id='results'></div>
     <script>
       TestSuite.module("Module A", function(module) {
+
         module.test("working assertions", function(assert) {
 
           assert.equals(1, 1);
@@ -17,13 +18,13 @@
           assert.equals('1', '1');
 
           assert.notEquals('1', 1);
-          assert.equals('bigodeira');
         });
 
         module.test("failing assertion", function(assert) {
           assert.equals(1, 2, "Expected this to break.");
         });
       });
+
 
       TestSuite.module("Module B", function(module) {
         var a;
@@ -33,7 +34,6 @@
         });
 
         module.test("passing assertion", function(assert) {
-          a = 1;
           assert.equals(a, 1);
         });
 
@@ -43,7 +43,6 @@
         });
 
         module.test("side effect free", function(assert) {
-          a = 1;
           assert.notEquals(a, 1010);
         });
 
