@@ -2,39 +2,34 @@
   'use strict';
 
   // ### TestSuite class constructor
-  function TestSuite() {
-    this.clear();
+  function Test() {
+
   };
 
-  /**
-   *
-   *
-   **/
-  TestSuite.prototype.clear = function () {
-    this.results = {
-      nTests: 0,
-      pass: 0,
-      failure: 0
-    };
+  Test.prototype.module = function () {
+    var stage = Test.Prepare.apply(null, arguments)
+    console.log(this.results.level, stage.description);
+    stage.fn.call(this, new Test);
   };
 
-  TestSuite.prototype.module = function (name, fn) {
-    fn.apply(this, this.asserts);
+  Test.prototype.test = Test.prototype.module;
+
+  Test.Prepare = function () {
+    var _args = Test.getArgs.apply(null, arguments)
+    return {
+      description: _args[0],
+      fn: _args[1]
+    }
   };
 
-  // ### Version
-  TestSuite.VERSION = '0.0.1';
-
-  // Export for Node, attach to `window` for browser.
-  if (typeof module !== 'undefined' && module.exports) {
-    module.exports = new TestSuite();
-  } else {
-    root.TestSuite = new TestSuite();
+  Test.getArgs = function () {
+    return Array.prototype.slice.call(arguments);
   }
 
+  // ### Version
+  Test.VERSION = '0.0.1';
+
+  // attach to `window` for browser.
+  root.TestSuite = new Test();
+
 }(this);
-
-
-// module.TestSuite.module("Module A", function(module) {
-// });
-
