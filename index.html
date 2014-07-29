@@ -33,6 +33,7 @@
         });
 
         module.test("passing assertion", function(assert) {
+          a = 1;
           assert.equals(a, 1);
         });
 
@@ -42,6 +43,7 @@
         });
 
         module.test("side effect free", function(assert) {
+          a = 1;
           assert.notEquals(a, 1010);
         });
 
