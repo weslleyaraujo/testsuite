@@ -11,12 +11,13 @@
     <script>
       TestSuite.module("Module A", function(module) {
         module.test("working assertions", function(assert) {
-          debugger
+
           assert.equals(1, 1);
 
           assert.equals('1', '1');
 
           assert.notEquals('1', 1);
+          assert.equals('bigodeira');
         });
 
         module.test("failing assertion", function(assert) {
