@@ -15,16 +15,19 @@
   Test.prototype.test = Test.prototype.module;
 
   Test.Prepare = function () {
-    var _args = Test.getArgs.apply(null, arguments);
+    var _args = Test.toArray.apply(null, arguments);
     return {
       description: _args[0],
       fn: _args[1]
     }
   };
 
+  Test.prototype.beforeEach = function () {
+  };
+
   Test.prototype.equals = function () {
     // does it equals?
-   if (Test.eql.apply(null, Test.getArgs.apply(null, arguments))) {
+   if (Test.eql.apply(null, Test.toArray.apply(null, arguments))) {
     console.log('========== NICE =============');
      return;
    }
@@ -34,24 +37,19 @@
 
   Test.prototype.notEquals = function () {
     // does it equals?
-   if (!Test.eql.apply(null, Test.getArgs.apply(null, arguments))) {
+   if (!Test.eql.apply(null, Test.toArray.apply(null, arguments))) {
     console.log('========== NICE =============');
      return;
    }
 
    console.log('========== BAD =============');
-  }
-
-  Test.prototype.notEquals = function () {
-    // does it equals?
-   return !Test.eql(null, Test.getArgs.apply(null, arguments));
   }
 
   Test.eql = function (a, b) {
     return a === b;
   };
 
-  Test.getArgs = function () {
+  Test.toArray = function () {
     return Array.prototype.slice.call(arguments);
   }
 
