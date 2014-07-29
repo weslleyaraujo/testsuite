@@ -23,6 +23,18 @@ module.exports = function (grunt) {
         ],
         dest: 'dist/testsuite.js'
       }
+    },
+
+    // ### watch
+    watch: {
+      scripts: {
+        files: [
+          'src/core/testsuite.js',
+          'src/core/logger.js',
+          'src/methods/*.js'
+        ],
+        tasks: ['concat']
+      }
     }
 
   });
