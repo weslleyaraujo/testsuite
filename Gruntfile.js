@@ -41,6 +41,13 @@ module.exports = function (grunt) {
         ],
         tasks: ['concat']
       }
+    },
+
+    jshint: {
+      all: [
+        'Gruntfile.js',
+        'src/**/*.js'
+      ]
     }
 
   });

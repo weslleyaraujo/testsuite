@@ -3,7 +3,7 @@
 * Licensed MIT
 */
 
-!function(root) {
+;(function(root) {
   'use strict';
 
   // ### TestSuite class constructor
@@ -12,7 +12,7 @@
       failures: 0,
       success: 0,
       errorMessages: []
-    }
+    };
   }
 
   Test.prototype.module = function (description, fn) {
@@ -20,12 +20,12 @@
     Test.methods.Logger('message', description);
 
     // exec
-    fn.call(this, new Test);
+    fn.call(this, new Test());
   };
 
   Test.prototype.test = function (description, fn) {
     // is before?
-    this.before && this.before();
+    if (this.before) this.before();
 
     var test = new Test();
 
@@ -46,9 +46,9 @@
   root.Test = Test;
   root.TestSuite = new Test();
 
-}(this);
+}(this));
 
-!function(root, Test) {
+;(function(root, Test) {
   'use strict';
   Test.methods = Test.methods || {};
   var defaults = {
@@ -75,9 +75,9 @@
         'width: 100%; background-color: '+ defaults.types[type].bgColor +'; color:' + defaults.types[type].color);
   };
 
-}(this, this.Test);
+}(this, this.Test));
 
-!function(root, Test) {
+;(function(root, Test) {
   'use strict';
   Test.methods = Test.methods || {};
 
@@ -97,19 +97,19 @@
     report.errorMessages.forEach(Test.methods.ErrorLog);
   };
 
-}(this, this.Test);
+}(this, this.Test));
 
-!function(root, Test) {
+;(function(root, Test) {
   'use strict';
   Test.methods = Test.methods || {};
 
   Test.methods.toArray = function () {
     return Array.prototype.slice.call(arguments);
-  }
+  };
 
-}(this, this.Test);
+}(this, this.Test));
 
-!function(root, Test) {
+;(function(root, Test) {
   'use strict';
   Test.methods = Test.methods || {};
 
@@ -117,9 +117,9 @@
     return a === b;
   };
 
-}(this, this.Test);
+}(this, this.Test));
 
-!function(Test, Methods) {
+;(function(Test, Methods) {
   'use strict';
 
   Test.prototype.equals = function () {
@@ -134,11 +134,11 @@
     this.report.failures++;
     this.report.errorMessages.push('Expected ' + _args[0] + ' to be ' + _args[1]);
     return false;
-  }
+  };
 
-}(this.Test, this.Test.methods);
+}(this.Test, this.Test.methods));
 
-!function(Test, Methods) {
+;(function(Test, Methods) {
   'use strict';
 
   Test.prototype.notEquals = function () {
@@ -153,6 +153,6 @@
     this.report.failures++;
     this.report.errorMessages.push('Expected ' + _args[0] + ' not to be ' + _args[1]);
     return false;
-  }
+  };
 
-}(this.Test, this.Test.methods);
+}(this.Test, this.Test.methods));

@@ -1,4 +1,4 @@
-!function(Test, Methods) {
+;(function(Test, Methods) {
   'use strict';
 
   Test.prototype.notEquals = function () {
@@ -13,6 +13,6 @@
     this.report.failures++;
     this.report.errorMessages.push('Expected ' + _args[0] + ' not to be ' + _args[1]);
     return false;
-  }
+  };
 
-}(this.Test, this.Test.methods);
+}(this.Test, this.Test.methods));

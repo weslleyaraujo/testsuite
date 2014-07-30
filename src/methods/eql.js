@@ -1,4 +1,4 @@
-!function(root, Test) {
+;(function(root, Test) {
   'use strict';
   Test.methods = Test.methods || {};
 
@@ -6,4 +6,4 @@
     return a === b;
   };
 
-}(this, this.Test);
+}(this, this.Test));

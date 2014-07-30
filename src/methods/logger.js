@@ -1,4 +1,4 @@
-!function(root, Test) {
+;(function(root, Test) {
   'use strict';
   Test.methods = Test.methods || {};
   var defaults = {
@@ -25,4 +25,4 @@
         'width: 100%; background-color: '+ defaults.types[type].bgColor +'; color:' + defaults.types[type].color);
   };
 
-}(this, this.Test);
+}(this, this.Test));

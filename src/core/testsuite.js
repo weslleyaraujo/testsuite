@@ -1,4 +1,4 @@
-!function(root) {
+;(function(root) {
   'use strict';
 
   // ### TestSuite class constructor
@@ -7,7 +7,7 @@
       failures: 0,
       success: 0,
       errorMessages: []
-    }
+    };
   }
 
   Test.prototype.module = function (description, fn) {
@@ -15,12 +15,12 @@
     Test.methods.Logger('message', description);
 
     // exec
-    fn.call(this, new Test);
+    fn.call(this, new Test());
   };
 
   Test.prototype.test = function (description, fn) {
     // is before?
-    this.before && this.before();
+    if (this.before) this.before();
 
     var test = new Test();
 
@@ -41,4 +41,4 @@
   root.Test = Test;
   root.TestSuite = new Test();
 
-}(this);
+}(this));

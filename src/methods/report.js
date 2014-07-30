@@ -1,4 +1,4 @@
-!function(root, Test) {
+;(function(root, Test) {
   'use strict';
   Test.methods = Test.methods || {};
 
@@ -18,4 +18,4 @@
     report.errorMessages.forEach(Test.methods.ErrorLog);
   };
 
-}(this, this.Test);
+}(this, this.Test));
