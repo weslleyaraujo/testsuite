@@ -1,3 +1,9 @@
+/*
+ * @method Logger
+ *
+ * Logs a message 
+ * @return {Boolean} true if the values are equal
+ * */
 ;(function(root, Test) {
   'use strict';
   Test.methods = Test.methods || {};

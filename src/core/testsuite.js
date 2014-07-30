@@ -1,7 +1,13 @@
+/*
+ * @class Test
+ *
+ * Initial start for Test class,
+ * reponsible for create modules and tests giving a report
+ * */
 ;(function(root) {
   'use strict';
 
-  // ### TestSuite class constructor
+  // initiates the class with a report object
   function Test() {
     this.report = {
       failures: 0,
@@ -10,6 +16,14 @@
     };
   }
 
+  /*
+   * Creates a module
+   *
+   * @method module
+   * @param description {String} a description message for the module
+   * @param description {Function} callback method to execut your module
+   * @return {Null}
+   * */
   Test.prototype.module = function (description, fn) {
     // log
     Test.methods.Logger('message', description);
@@ -18,8 +32,17 @@
     fn.call(this, new Test());
   };
 
+  /*
+   * Creates a test
+   *
+   * @method test
+   * @param description {String} a description message for the module
+   * @param description {Function} callback method to execut your test
+   * @return {null}
+   * */
   Test.prototype.test = function (description, fn) {
-    // is before?
+
+    // is any beforeEach registered?
     if (this.before) this.before();
 
     var test = new Test();
@@ -31,6 +54,14 @@
     Test.methods.Report(test.report, description);
   };
 
+  /*
+   * Registers a beforeEach method
+   *
+   * @method test
+   * @param description {String} a description message for the module
+   * @param description {Function} callback method to execut your test
+   * @return {Function} the registered methods to execute
+   * */
   Test.prototype.beforeEach = function (fn) {
     this.before = function () {
       fn.call(this);
