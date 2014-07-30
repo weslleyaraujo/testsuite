@@ -17,7 +17,7 @@
           assert.equals('1', '1');
 
 
-          // assert.notEquals('1', 1);
+          assert.notEquals('1', 1);
         });
 
         module.test("failing assertion", function(assert) {
@@ -45,9 +45,27 @@
         });
 
         module.test("side effect free", function(assert) {
-          // assert.notEquals(a, 1010);
+          assert.notEquals(a, 1010);
         });
 
+      });
+
+      TestSuite.module('my nice module', function (module) {
+        module.beforeEach(function () {
+          console.log('im before each');
+        });
+
+        module.test('1 is equal 1', function (assert) {
+          assert.equals(1, 1);
+        });
+
+        module.test('1 is not equal 2', function (assert) {
+          assert.notEquals(1, 2);
+        });
+
+        module.test('1 is equal 2', function (assert) {
+          assert.notEquals(1, 1);
+        });
       });
     </script>
   </body>
