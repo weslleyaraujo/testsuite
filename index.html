@@ -12,16 +12,18 @@
       TestSuite.module("Module A", function(module) {
 
         module.test("working assertions", function(assert) {
-
           assert.equals(1, 1);
 
           assert.equals('1', '1');
 
-          assert.notEquals('1', 1);
+
+          // assert.notEquals('1', 1);
         });
 
         module.test("failing assertion", function(assert) {
+          assert.equals(1, 1);
           assert.equals(1, 2, "Expected this to break.");
+          assert.equals(10, '1');
         });
       });
 
@@ -43,7 +45,7 @@
         });
 
         module.test("side effect free", function(assert) {
-          assert.notEquals(a, 1010);
+          // assert.notEquals(a, 1010);
         });
 
       });

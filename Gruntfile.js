@@ -19,7 +19,15 @@ module.exports = function (grunt) {
       dist: {
         src: [
           'src/core/testsuite.js',
-          'src/methods/*.js'
+
+          // ## methods
+          'src/methods/logger.js',
+          'src/methods/report.js',
+          'src/methods/toArray.js',
+          'src/methods/eql.js',
+
+          // ### asserts
+          'src/asserts/*.js'
         ],
         dest: 'dist/testsuite.js'
       }
@@ -29,9 +37,7 @@ module.exports = function (grunt) {
     watch: {
       scripts: {
         files: [
-          'src/core/testsuite.js',
-          'src/core/logger.js',
-          'src/methods/*.js'
+          'src/**/**.js',
         ],
         tasks: ['concat']
       }
