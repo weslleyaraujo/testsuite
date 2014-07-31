@@ -146,12 +146,12 @@
   Test.methods.Report = function (report, description) {
 
     if (report.failures === 0) {
-      Test.methods.Logger('success', description);
+      Test.methods.Logger('success', description + ': ' + report.success + ' success(s)');
       return;
     }
 
     // test are not okay
-    Test.methods.Logger('failure', description);
+    Test.methods.Logger('failure', description +  ': ' + report.failures + ' failure(s)');
     report.errorMessages.forEach(Test.methods.ErrorLog);
   };
 
