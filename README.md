@@ -47,7 +47,7 @@ The results will come into your console :smiley:
 License
 ----
 
-MIT
+Beerware
 
 Installation
 --------------
