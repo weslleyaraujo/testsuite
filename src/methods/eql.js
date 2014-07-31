@@ -13,4 +13,4 @@
     return a === b;
   };
 
-}(this, this.Test));
+} (this, this.Test));

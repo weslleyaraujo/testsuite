@@ -17,11 +17,11 @@
   }
 
   /*
-   * Creates a module
+   * Creates a module of tests
    *
    * @method module
-   * @param description {String} a description message for the module
-   * @param description {Function} callback method to execut your module
+   * @param {String} description The description of the module
+   * @param {Function} fn Method to exec your module
    * @return {Null}
    * */
   Test.prototype.module = function (description, fn) {
@@ -36,9 +36,9 @@
    * Creates a test
    *
    * @method test
-   * @param description {String} a description message for the module
-   * @param description {Function} callback method to execut your test
-   * @return {null}
+   * @param {String} description The description of the test
+   * @param {Function} fn Method to exec your test
+   * @return {Null}
    * */
   Test.prototype.test = function (description, fn) {
 
@@ -55,12 +55,11 @@
   };
 
   /*
-   * Registers a beforeEach method
+   * Registers a method to run before each given tests
    *
-   * @method test
-   * @param description {String} a description message for the module
-   * @param description {Function} callback method to execut your test
-   * @return {Function} the registered methods to execute
+   * @method beforeEach
+   * @param {Function} fn Method to exec before the tests
+   * @return {Function} The registered method
    * */
   Test.prototype.beforeEach = function (fn) {
     this.before = function () {
@@ -72,4 +71,4 @@
   root.Test = Test;
   root.TestSuite = new Test();
 
-}(this));
+} (this));
