@@ -40,7 +40,8 @@ TestSuite.module("Module B", function (module) {
 });
 ```
 
-The results will come into your console :)
+The results will come into your console :smiley:
+
 (Better displayed on Google Chrome)
 
 License
