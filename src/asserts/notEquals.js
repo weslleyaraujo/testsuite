@@ -7,18 +7,16 @@
 ;(function(Test, Methods) {
   'use strict';
 
-  Test.prototype.notEquals = function () {
-    var _args = Methods.toArray.apply(null, arguments);
-
+  Test.prototype.notEquals = function (a, b) {
     // does it equals?
-    if (!Methods.eql.apply(null, _args)) {
+    if (!Methods.eql(a, b)) {
       this.report.success++;
       return true;
     }
 
     this.report.failures++;
-    this.report.errorMessages.push('Expected ' + _args[0] + '(' + typeof (_args[0]) + ')'
-          + ' not to be ' + _args[1] + '('+ typeof (_args[1]) +')');
+    this.report.errorMessages.push('Expected ' + a + '(' + typeof (a) + ')'
+          + ' not to equal ' + b + '('+ typeof (b) +')');
     return false;
   };
 
