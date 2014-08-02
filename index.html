@@ -56,6 +56,16 @@
         module.test('b equals "no"', function (assert) {
           assert.equals(b, 'no');
         });
+
+        module.test('has value in array', function (assert) {
+          b = ['yes', 'no'];
+          assert.toContain(b, 'no');
+        });
+
+        module.test('do not has value in array', function (assert) {
+          b = ['yes', 'no'];
+          assert.notToContain(b, 'aushaushauhs');
+        });
       });
     </script>
   </body>
