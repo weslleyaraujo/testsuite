@@ -1,6 +1,6 @@
-/** testsuite -v0.0.0
+/** testsuite -v0.0.1
 * Copyright (c) 2014 Weslley Araujo
-* Licensed MIT
+* Licensed Beerware
 */
 
 /*

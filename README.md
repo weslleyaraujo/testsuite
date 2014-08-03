@@ -38,6 +38,18 @@ TestSuite.module("Module B", function (module) {
       assert.equals(b, 'no');
     });
 });
+
+TestSuite.module("Module C", function (module) {
+    var b = [1, 2, 3]
+    
+  module.test('has value in array', function (assert) {
+    assert.toContain(b, 2);
+  });
+
+  module.test('does not has value in array', function (assert) {
+    assert.notToContain(b, 4);
+  });
+});
 ```
 
 The results will come into your console :smiley:
