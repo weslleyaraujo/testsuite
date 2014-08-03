@@ -65,8 +65,8 @@ Installation
 --------------
 
 ```sh
-git clone https://github.com/weslleyaraujo/testesuite.git your_project
-cd your_project
+git clone https://github.com/weslleyaraujo/testsuite.git testsuite
+cd testsuite
 npm install
 ```
 
