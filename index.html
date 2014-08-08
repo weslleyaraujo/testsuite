@@ -1,72 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Frontend Challenge</title>
-    <script src='dist/testsuite.js'></script>
-  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Testsuite - A small framework to write unit tests based on javascript</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
   <body>
-    <div id='results'></div>
-    <script>
-      TestSuite.module("Module A", function(module) {
+    <!-- Main jumbotron for a primary marketing message or call to action -->
 
-        module.test("working assertions", function(assert) {
-          assert.equals(1, 1);
-          assert.equals('1', '1');
-          assert.notEquals('1', 1);
-        });
+    <div class="jumbotron">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="http://weslleyaraujo.github.io/testsuite">Testsuite</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="#group-modules">Modules</a></li>
+              <li><a href="#group-test">Test</a></li>
+              <li><a href="#group-assert">Assert</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Available Asserts <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#assert-equals">equals</a></li>
+                  <li><a href="#assert-notEquals">notEquals</a></li>
+                  <li><a href="#assert-contains">contains</a></li>
+                  <li><a href="#assert-notToContain">notToContain</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <h1>Testsuite</h1>
+        <p>Testsuite is a small framework to write unit tests based on javascript. It has a quite simple features and its not made to compete with any other similar frameworks such as Jasmine, Mocha, etc. It's a study case project.</p>
+        <p><a href="https://github.com/weslleyaraujo/testsuite/archive/master.zip" class="btn btn-primary btn-lg" role="button">Download &raquo;</a></p>
+      </div>
+    </div>
 
-        module.test("failing assertion", function(assert) {
-          assert.equals(1, 1);
-          assert.equals(1, 2, "Expected this to break.");
-          assert.equals(10, '1');
-        });
-      });
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group" id="group-modules">
+            <h3>Modules</h3>
+            <p>Here's a quick module example:</p>
+            <pre>
+Testsuite.module('My module description', function (module) {
+  // thats my module code
+});
+            </pre>
+            <p>Every module you give you a <code>module</code> argument that enables you to write your tests.</p>
+          </div>
+
+          <div class="form-group" id="group-test">
+            <h3>Test</h3>
+            <p>Writing tests would be like::</p>
+            <pre>
+Testsuite.module('My module description', function (module) {
+  module.test('My module test', function(assert) {
+    // my test assertions
+  });
+});
+            </pre>
+            <p>Every test gives you a <code>assert</code> argument that enables you to write your asserts.</p>
+          </div>
+
+          <div class="form-group" id="group-assert">
+            <h3>Assert</h3>
+            <p>Writing asserts would be like::</p>
+            <pre>
+Testsuite.module('My module description', function (module) {
+  module.test('My module test', function(assert) {
+    assert.equals(1, 1);
+  });
+});
+            </pre>
+            <p>And finaly every test gives you a <code>assert</code> argument that enables you to write your asserts.</p>
+          </div>
+
+          <div class="form-group">
+            <h2>Available asserts</h2>
+            <p>Here's some asserts to use in your tests</p>
+          </div>
+
+          <div class="form-group" id="assert-equals">
+            <h3><code>equals</code></h3>
+            <p>Assert values to equals</p>
+            <pre>
+assert.equals(1, 1); // true
+assert.equals(1, '1'); // false
+assert.equals(2, 1); // false
+            </pre>
+          </div>
+
+          <div class="form-group" id="assert-notEquals">
+            <h3><code>notEquals</code></h3>
+            <p>Assert values not to equals</p>
+            <pre>
+assert.notEquals(1, 1); // false
+assert.notEquals(1, '1'); // true
+assert.notEquals(2, 1); // true
+            </pre>
+          </div>
+
+          <div class="form-group" id="assert-toContain">
+            <h3><code>toContain</code></h3>
+            <p>Assert that values contains in array</p>
+            <pre>
+var a = [1, 2, 3];
+assert.toContain(a, 1); // true
+assert.toContain(a, '1'); // false
+assert.toContain(a, 4); // false
+            </pre>
+          </div>
+
+          <div class="form-group" id="assert-notToContain">
+            <h3><code>notToContain</code></h3>
+            <p>Assert that values not contains in array</p>
+            <pre>
+var a = [1, 2, 3];
+assert.notToContain(a, 1); // false
+assert.notToContain(a, '1'); // true
+assert.notToContain(a, 4); // true
+            </pre>
+          </div>
+
+        </div>
+      </div>
 
 
-      TestSuite.module("Module B", function(module) {
-        var a;
+      <footer class="form-group">
+        <a href="http://weslleydeveloper.com">&copy; Weslley Araujo 2014</a>
+      </footer>
+    </div> <!-- /container -->
 
-        module.beforeEach(function () {
-          a = 1;
-        });
 
-        module.test("passing assertion", function(assert) {
-          assert.equals(a, 1);
-        });
-
-        module.test("messing with a", function(assert) {
-          a = 1010;
-          assert.equals(a, 1010);
-        });
-
-        module.test("side effect free", function(assert) {
-          assert.notEquals(a, 1010);
-        });
-
-      });
-
-      TestSuite.module('Module with beforeEach', function (module) {
-        var b = 'yes';
-        module.beforeEach(function () {
-          b = 'no';
-        });
-
-        module.test('b equals "no"', function (assert) {
-          assert.equals(b, 'no');
-        });
-
-        module.test('has value in array', function (assert) {
-          b = ['yes', 'no'];
-          assert.toContain(b, 'no');
-        });
-
-        module.test('do not has value in array', function (assert) {
-          b = ['yes', 'no'];
-          assert.notToContain(b, 'aushaushauhs');
-        });
-      });
-    </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <style>
+      .form-group { padding-top: 40px }
+    </style>
   </body>
 </html>
+

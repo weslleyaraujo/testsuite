@@ -1,0 +1,25 @@
+{
+  "name": "testsuite",
+  "version": "0.0.2",
+  "homepage": "http://weslleyaraujo.github.io/testsuite",
+  "authors": [
+    "Weslley Araujo <weslleyaraujo20@gmail.com>"
+  ],
+  "description": "Testsuite is a small framework to write unit tests based on javascript",
+  "main": "dist/testsuite.js",
+  "keywords": [
+    "unit",
+    "javascript"
+  ],
+  "license": "Beerware",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
