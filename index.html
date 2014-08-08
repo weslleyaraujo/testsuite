@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/prismjs/prism.css" rel="stylesheet">
 
   </head>
 
@@ -57,9 +58,11 @@
             <h3>Modules</h3>
             <p>Here's a quick module example:</p>
             <pre>
+              <code class="language-javascript">
 Testsuite.module('My module description', function (module) {
   // thats my module code
 });
+              </code>
             </pre>
             <p>Every module you give you a <code>module</code> argument that enables you to write your tests.</p>
           </div>
@@ -68,11 +71,13 @@ Testsuite.module('My module description', function (module) {
             <h3>Test</h3>
             <p>Writing tests would be like::</p>
             <pre>
+              <code class="language-javascript">
 Testsuite.module('My module description', function (module) {
   module.test('My module test', function(assert) {
     // my test assertions
   });
 });
+              </code>
             </pre>
             <p>Every test gives you a <code>assert</code> argument that enables you to write your asserts.</p>
           </div>
@@ -81,11 +86,13 @@ Testsuite.module('My module description', function (module) {
             <h3>Assert</h3>
             <p>Writing asserts would be like::</p>
             <pre>
+              <code class="language-javascript">
 Testsuite.module('My module description', function (module) {
   module.test('My module test', function(assert) {
     assert.equals(1, 1);
   });
 });
+              </code>
             </pre>
             <p>And finaly every test gives you a <code>assert</code> argument that enables you to write your asserts.</p>
           </div>
@@ -99,9 +106,11 @@ Testsuite.module('My module description', function (module) {
             <h3><code>equals</code></h3>
             <p>Assert values to equals</p>
             <pre>
+              <code class="language-javascript">
 assert.equals(1, 1); // true
 assert.equals(1, '1'); // false
 assert.equals(2, 1); // false
+              </code>
             </pre>
           </div>
 
@@ -109,9 +118,11 @@ assert.equals(2, 1); // false
             <h3><code>notEquals</code></h3>
             <p>Assert values not to equals</p>
             <pre>
+              <code class="language-javascript">
 assert.notEquals(1, 1); // false
 assert.notEquals(1, '1'); // true
 assert.notEquals(2, 1); // true
+              </code>
             </pre>
           </div>
 
@@ -119,10 +130,12 @@ assert.notEquals(2, 1); // true
             <h3><code>toContain</code></h3>
             <p>Assert that values contains in array</p>
             <pre>
+              <code class="language-javascript">
 var a = [1, 2, 3];
 assert.toContain(a, 1); // true
 assert.toContain(a, '1'); // false
 assert.toContain(a, 4); // false
+              </code>
             </pre>
           </div>
 
@@ -130,10 +143,12 @@ assert.toContain(a, 4); // false
             <h3><code>notToContain</code></h3>
             <p>Assert that values not contains in array</p>
             <pre>
+              <code class="language-javascript">
 var a = [1, 2, 3];
 assert.notToContain(a, 1); // false
 assert.notToContain(a, '1'); // true
 assert.notToContain(a, 4); // true
+              </code>
             </pre>
           </div>
 
@@ -152,6 +167,7 @@ assert.notToContain(a, 4); // true
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/prismjs/prism.js"></script>
     <style>
       .form-group { padding-top: 40px }
     </style>
