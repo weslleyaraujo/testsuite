@@ -43,11 +43,24 @@ module.exports = function (grunt) {
       }
     },
 
+    // ### jshint
     jshint: {
       all: [
         'Gruntfile.js',
         'src/**/*.js'
       ]
+    },
+
+    // ### uglify
+    uglify: {
+      options: {
+        banner: '<%= banner_name %>'
+      },
+      scripts: {
+        files: {
+          'dist/testsuite.min.js': ['dist/testsuite.js']
+        }
+      }
     }
 
   });
