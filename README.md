@@ -5,6 +5,8 @@ It has a quite simple features and its not made to compete with any other simila
 I started this project based on a study case.
 (Have you imagine how do they test a test framework? :open_mouth:)
 
+[Full docs here]
+
 Quick Example
 --------------
 Example and available features:
@@ -74,4 +76,5 @@ npm install
 
 [Jasmine]:https://github.com/pivotal/jasmine
 [Mocha]:https://github.com/visionmedia/mocha
+[Full docs here]:http://weslleyaraujo.github.io/testsuite/
 
