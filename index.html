@@ -83,6 +83,23 @@ Testsuite.module('My module description', function (module) {
           </div>
 
           <div class="form-group" id="group-assert">
+            <h3>BeforeEach</h3>
+            <p>You can even write beforeEach methods to execute before each module</p>
+            <pre>
+              <code class="language-javascript">
+Testsuite.module('My module description', function (module) {
+  module.beforeEach(function () {
+    // my before each method
+  });
+  module.test('My module test', function(assert) {
+    // my asserts
+  });
+});
+              </code>
+            </pre>
+          </div>
+
+          <div class="form-group" id="group-assert">
             <h3>Assert</h3>
             <p>Writing asserts would be like::</p>
             <pre>
@@ -178,6 +195,9 @@ assert.notToContain(a, 4); // true
     <style>
       .form-group { padding-top: 40px }
     </style>
+
+    <script src="dist/testsuite.min.js"></script>
+
   </body>
 </html>
 
