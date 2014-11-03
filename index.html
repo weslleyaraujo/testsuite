@@ -198,6 +198,24 @@ assert.notToContain(a, 4); // true
 
     <script src="dist/testsuite.min.js"></script>
 
+    <script>
+      TestSuite.module('Module example', function (module) {
+        var a = 1;
+        module.beforeEach(function () {
+          a = 2;
+        });
+
+        module.test('Hello from my module guys!', function (assert) {
+          assert.equals(a, 2);
+          assert.notEquals(1, a)
+        });
+
+        module.test('Hello from my other module!', function (assert) {
+          assert.toContain([1,2], 2);
+        });
+
+      });
+    </script>
   </body>
 </html>
 
