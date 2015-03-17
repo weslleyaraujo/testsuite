@@ -59,7 +59,7 @@
             <p>Here's a quick module example:</p>
             <pre>
               <code class="language-javascript">
-Testsuite.module('My module description', function (module) {
+TestSuite.module('My module description', function (module) {
   // thats my module code
 });
               </code>
@@ -72,7 +72,7 @@ Testsuite.module('My module description', function (module) {
             <p>Writing tests would be like::</p>
             <pre>
               <code class="language-javascript">
-Testsuite.module('My module description', function (module) {
+TestSuite.module('My module description', function (module) {
   module.test('My module test', function(assert) {
     // my test assertions
   });
@@ -87,7 +87,7 @@ Testsuite.module('My module description', function (module) {
             <p>You can even write beforeEach methods to execute before each module</p>
             <pre>
               <code class="language-javascript">
-Testsuite.module('My module description', function (module) {
+TestSuite.module('My module description', function (module) {
   module.beforeEach(function () {
     // my before each method
   });
@@ -104,7 +104,7 @@ Testsuite.module('My module description', function (module) {
             <p>Writing asserts would be like::</p>
             <pre>
               <code class="language-javascript">
-Testsuite.module('My module description', function (module) {
+TestSuite.module('My module description', function (module) {
   module.test('My module test', function(assert) {
     assert.equals(1, 1);
   });
