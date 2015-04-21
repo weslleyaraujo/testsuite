@@ -11,7 +11,7 @@ Quick Example
 --------------
 Example and available features:
 
-```
+```javascript
 TestSuite.module("Module A", function (module) {
 
     module.test("working assertions", function(assert) {
@@ -66,7 +66,7 @@ Beerware
 Installation
 --------------
 
-```sh
+```
 git clone https://github.com/weslleyaraujo/testsuite.git testsuite
 cd testsuite
 npm install
